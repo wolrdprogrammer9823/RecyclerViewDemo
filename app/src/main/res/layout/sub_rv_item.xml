@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wolfsea.recyclerviewdemo.defineview.WHSameTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/square_tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_bg"
+    android:textSize="@dimen/sp_15"
+    tools:text="@string/letter_a"
+    android:gravity="center"
+    android:textColor="@color/black"/>

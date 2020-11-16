@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wolfsea.recyclerviewdemo.defineview.ParentScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScrollViewBuildInScrollViewActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:src="@drawable/item_bg"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            android:src="@drawable/timg"/>
+
+        <com.wolfsea.recyclerviewdemo.defineview.ChildScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.wolfsea.recyclerviewdemo.defineview.ChildScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@drawable/item_bg"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            android:src="@drawable/timg"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@drawable/item_bg"/>
+
+        <com.wolfsea.recyclerviewdemo.defineview.ChildScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/item_bg2"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </com.wolfsea.recyclerviewdemo.defineview.ChildScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="fitXY"
+            android:src="@drawable/timg"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</com.wolfsea.recyclerviewdemo.defineview.ParentScrollView>

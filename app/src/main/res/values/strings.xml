@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerViewDemo</string>
+    <string name="letter_a">A</string>
+    <string name="scrollview_build_in_recyclerview">ScrollView嵌套RecyclerView</string>
+    <string name="recyclerview_build_in_recyclerview">RecyclerView嵌套RecyclerView</string>
+    <string name="recyclerview_build_in_scrollview">RecyclerView嵌套ScrollView</string>
+    <string name="scrollview_build_in_scrollview">ScrollView嵌套ScrollView</string>
+</resources>
