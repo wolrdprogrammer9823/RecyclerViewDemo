@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.wolfsea.recyclerviewdemo.R;
 import com.wolfsea.recyclerviewdemo.defineview.ChildRecyclerView;
 import com.wolfsea.recyclerviewdemo.defineview.EvenItemDecoration;
-import com.wolfsea.recyclerviewdemo.defineview.NestRecyclerView;
 import java.util.List;
 
 /**
@@ -20,10 +19,10 @@ import java.util.List;
  **/
 public class RootRvAdapter extends RecyclerView.Adapter<RootRvAdapter.RootViewHolder> {
 
-    private Context context;
+    private final Context context;
 
-    private List<String> rootList;
-    private List<List<String>> subList;
+    private final List<String> rootList;
+    private final List<List<String>> subList;
 
     public RootRvAdapter(Context context, List<String> rootList, List<List<String>> subList) {
 
@@ -47,8 +46,8 @@ public class RootRvAdapter extends RecyclerView.Adapter<RootRvAdapter.RootViewHo
         String title = rootList.get(position);
         holder.titleIv.setText(title);
 
-        boolean subListIsNotNull = subList != null;
-        if (subListIsNotNull) {
+        boolean subListNotNull = subList != null;
+        if (subListNotNull) {
 
             List<String> letterList = subList.get(position);
             holder.subRv.setLayoutManager(new GridLayoutManager(context, 3));

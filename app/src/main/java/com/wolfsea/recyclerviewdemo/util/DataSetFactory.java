@@ -1,7 +1,11 @@
 package com.wolfsea.recyclerviewdemo.util;
+import com.wolfsea.recyclerviewdemo.bean.LocalRvData;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -40,11 +44,10 @@ public class DataSetFactory {
         "你的答案",
     };
 
-    public static List<String> createLetters() {
+    public static List<String> createLetters(int itemCount) {
 
         List<String> letterList = new ArrayList<>();
 
-        int itemCount = RANDOM.nextInt(25) + 5;
         for (int i = 0; i < itemCount; i++) {
 
             int index = RANDOM.nextInt(CHARACTERS.length);
@@ -63,7 +66,8 @@ public class DataSetFactory {
 
         for (int i = 0; i < LENGTH; i++) {
 
-            List<String> letters = createLetters();
+            int itemCount = RANDOM.nextInt(25) + 5;
+            List<String> letters = createLetters(itemCount);
             lettersList.add(letters);
         }
 
@@ -74,5 +78,39 @@ public class DataSetFactory {
 
         return Arrays.asList(TITLES);
     }
+
+    public static Map<String, String> createDataSet() {
+
+        Map<String, String> dataSet = new HashMap<>();
+        final int LENGTH = TITLES.length;
+        List<String> letterList = createLetters(LENGTH);
+
+        for (int i = 0; i < LENGTH; i++) {
+
+            String key = letterList.get(i);
+            String value = TITLES[i];
+            dataSet.put(key, value);
+        }
+
+        return dataSet;
+    }
+
+    public static List<LocalRvData> getDataSet() {
+
+        List<LocalRvData> localRvDataList = new ArrayList<>();
+        final int LENGTH = TITLES.length;
+        List<String> letterList = createLetters(LENGTH);
+
+        for (int i = 0; i < LENGTH; i++) {
+
+            String key = letterList.get(i);
+            String value = TITLES[i];
+            LocalRvData localRvData = new LocalRvData(key, value);
+            localRvDataList.add(localRvData);
+        }
+
+        return localRvDataList;
+    }
+
 
 }

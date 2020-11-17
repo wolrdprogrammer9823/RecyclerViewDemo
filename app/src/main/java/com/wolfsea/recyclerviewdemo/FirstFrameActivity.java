@@ -23,6 +23,9 @@ public class FirstFrameActivity extends AppCompatActivity implements View.OnClic
 
         scrollViewBuildInScrollViewViewBtn = findViewById(R.id.scrollview_build_in_scrollview);
         scrollViewBuildInScrollViewViewBtn.setOnClickListener(this);
+
+        recyclerViewLocalRefreshBtn = findViewById(R.id.recyclerview_local_refresh);
+        recyclerViewLocalRefreshBtn.setOnClickListener(this);
     }
 
     @Override
@@ -58,6 +61,11 @@ public class FirstFrameActivity extends AppCompatActivity implements View.OnClic
                 startViewActivity(ScrollViewBuildInScrollViewActivity.class);
                 break;
             }
+            case R.id.recyclerview_local_refresh: {
+
+                startViewActivity(RecyclerViewLocalRefreshActivity.class);
+                break;
+            }
             default:
                 break;
         }
@@ -80,4 +88,6 @@ public class FirstFrameActivity extends AppCompatActivity implements View.OnClic
     private AppCompatButton recyclerViewBuildInScrollViewBtn;
 
     private AppCompatButton scrollViewBuildInScrollViewViewBtn;
+
+    private AppCompatButton recyclerViewLocalRefreshBtn;
 }

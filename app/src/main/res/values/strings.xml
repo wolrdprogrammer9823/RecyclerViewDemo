@@ -5,4 +5,9 @@
     <string name="recyclerview_build_in_recyclerview">RecyclerView嵌套RecyclerView</string>
     <string name="recyclerview_build_in_scrollview">RecyclerView嵌套ScrollView</string>
     <string name="scrollview_build_in_scrollview">ScrollView嵌套ScrollView</string>
+    <string name="recyclerview_local_refresh">RecyclerView局部刷新</string>
+    <string name="input_key_hint">请输入Key</string>
+    <string name="input_value_hint">请输入Value</string>
+    <string name="input_position_hint">请输入Position</string>
+    <string name="sure_update">确认修改</string>
 </resources>

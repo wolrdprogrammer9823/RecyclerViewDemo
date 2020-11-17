@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecyclerViewDemo">
-        <activity android:name=".ScrollViewBuildInScrollViewActivity"></activity>
+        <activity android:name=".RecyclerViewLocalRefreshActivity"></activity>
+        <activity android:name=".ScrollViewBuildInScrollViewActivity" />
         <activity android:name=".RecyclerViewBuildScrollViewActivity" />
         <activity android:name=".ScrollViewBuildInRecyclerViewActivity" />
         <activity android:name=".FirstFrameActivity">

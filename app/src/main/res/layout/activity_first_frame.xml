@@ -44,4 +44,13 @@
         android:textSize="@dimen/sp_15"
         android:layout_marginTop="@dimen/dp_10"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/recyclerview_local_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:textAllCaps="false"
+        android:text="@string/recyclerview_local_refresh"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="@dimen/dp_10"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
