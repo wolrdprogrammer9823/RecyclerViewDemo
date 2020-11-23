@@ -10,13 +10,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.wolfsea.recyclerviewdemo.adapter.LocalRefreshRvAdapter;
 import com.wolfsea.recyclerviewdemo.bean.LocalRvData;
 import com.wolfsea.recyclerviewdemo.callback.AdapterDiffCallback;
 import com.wolfsea.recyclerviewdemo.util.DataSetFactory;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class RecyclerViewLocalRefreshActivity extends AppCompatActivity
                                               implements View.OnClickListener,LocalRefreshRvAdapter.OnItemClickListener {
@@ -61,9 +61,9 @@ public class RecyclerViewLocalRefreshActivity extends AppCompatActivity
         switch (VIEW_ID) {
             case R.id.sure_update_btn: {
 
-                String key = keyEt.getText().toString().trim();
-                String value = valueEt.getText().toString().trim();
-                String position = positionEt.getText().toString().trim();
+                String key = Objects.requireNonNull(keyEt.getText()).toString().trim();
+                String value = Objects.requireNonNull(valueEt.getText()).toString().trim();
+                String position = Objects.requireNonNull(positionEt.getText()).toString().trim();
                 int index = Integer.parseInt(position);
 
                 Log.d(TAG, "key:" + key + ",value:" + value + ",position:" + position);
