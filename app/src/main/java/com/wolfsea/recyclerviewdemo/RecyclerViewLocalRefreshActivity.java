@@ -1,3 +1,4 @@
+
 package com.wolfsea.recyclerviewdemo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import com.wolfsea.recyclerviewdemo.adapter.LocalRefreshRvAdapter;
 import com.wolfsea.recyclerviewdemo.bean.LocalRvData;
 import com.wolfsea.recyclerviewdemo.callback.AdapterDiffCallback;
+import com.wolfsea.recyclerviewdemo.shimmer.ShimmerRecyclerView;
 import com.wolfsea.recyclerviewdemo.util.DataSetFactory;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +49,20 @@ public class RecyclerViewLocalRefreshActivity extends AppCompatActivity
         localRefreshRv.setLayoutManager(layoutManager);
         localRefreshRv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
 
-        oldDataSet = DataSetFactory.getDataSet();
-        newDataSet = new ArrayList<>(oldDataSet);
-        localRefreshRvAdapter = new LocalRefreshRvAdapter(oldDataSet);
+        localRefreshRvAdapter = new LocalRefreshRvAdapter();
         localRefreshRvAdapter.setOnItemClickListener(this);
         localRefreshRv.setAdapter(localRefreshRvAdapter);
+        localRefreshRv.showShimmerAdapter();
+
+        localRefreshRv.postDelayed(() -> {
+
+            oldDataSet = DataSetFactory.getDataSet();
+            newDataSet = new ArrayList<>(oldDataSet);
+            localRefreshRvAdapter.setDataSet(oldDataSet);
+            localRefreshRv.hideShimmerAdapter();
+
+        }, 5000);
+
     }
 
     @Override
@@ -64,7 +75,12 @@ public class RecyclerViewLocalRefreshActivity extends AppCompatActivity
                 String key = Objects.requireNonNull(keyEt.getText()).toString().trim();
                 String value = Objects.requireNonNull(valueEt.getText()).toString().trim();
                 String position = Objects.requireNonNull(positionEt.getText()).toString().trim();
-                int index = Integer.parseInt(position);
+
+                int index = 0;
+                if (position.matches("[\\d+]")) {
+
+                    index = Integer.parseInt(position);
+                }
 
                 Log.d(TAG, "key:" + key + ",value:" + value + ",position:" + position);
                 LocalRvData localRvData = new LocalRvData(key, value);
@@ -108,7 +124,7 @@ public class RecyclerViewLocalRefreshActivity extends AppCompatActivity
     private AppCompatEditText valueEt;
     private AppCompatEditText positionEt;
 
-    private RecyclerView localRefreshRv;
+    private ShimmerRecyclerView localRefreshRv;
     private LinearLayoutManager layoutManager;
     private LocalRefreshRvAdapter localRefreshRvAdapter;
 

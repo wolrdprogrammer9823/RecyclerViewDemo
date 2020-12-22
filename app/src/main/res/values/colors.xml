@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="shimmer_light_transparent">#16000000</color>
+    <color name="shimmer_default_color">#e3e1e3</color>
+    <color name="shimmer_light_gray">#a2878787</color>
+    <color name="shimmer_dark_transparent">#24000000</color>
+    <color name="shimmer_shimmer_color">#21ffffff</color>
+    <color name="shimmer_divider_color">#ffd6d6d6</color>
 </resources>

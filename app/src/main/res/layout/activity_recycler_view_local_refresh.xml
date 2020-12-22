@@ -45,13 +45,22 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <!--
+       shimmer_demo_shimmer_color 为闪烁颜色
+       shimmer_demo_layout  为闪烁布局
+       shimmer_demo_layout_manager_type  为布局管理器类型
+    -->
+    <com.wolfsea.recyclerviewdemo.shimmer.ShimmerRecyclerView
         android:id="@+id/local_refresh_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintTop_toBottomOf="@id/top_ll_layout"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:shimmer_demo_layout="@layout/shimmer_layout_local_refresh"
+        app:shimmer_demo_layout_manager_type="linear_vertical"
+        app:shimmer_demo_shimmer_color="@color/shimmer_shimmer_color"
         android:layout_marginTop="@dimen/dp_10"/>
+
 
 </com.wolfsea.recyclerviewdemo.defineview.DefineConstraintLayout>

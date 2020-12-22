@@ -19,12 +19,39 @@ public class LocalRefreshRvAdapter extends RecyclerView.Adapter<LocalRefreshRvAd
 
     private static final String TAG = "LocalRefreshRvAd";
 
-    private final List<LocalRvData> dataSet;
+    private List<LocalRvData> dataSet;
 
     private final View.OnClickListener onClickListener;
     private final View.OnLongClickListener onLongClickListener;
 
     private OnItemClickListener onItemClickListener;
+
+    public LocalRefreshRvAdapter() {
+
+        onClickListener = view -> {
+
+            LocalRefreshHolder holder = (LocalRefreshHolder) view.getTag();
+            boolean itemClickListenerNotNull = onItemClickListener != null;
+            if (itemClickListenerNotNull) {
+
+                int position = holder.getAdapterPosition();
+                onItemClickListener.onItemClick(view, holder, position);
+            }
+        };
+
+        onLongClickListener = view -> {
+
+            LocalRefreshHolder holder = (LocalRefreshHolder) view.getTag();
+            boolean itemClickListenerNotNull = onItemClickListener != null;
+            if (itemClickListenerNotNull) {
+
+                int position = holder.getAdapterPosition();
+                onItemClickListener.onItemLongClick(view, holder, position);
+            }
+
+            return true;
+        };
+    }
 
     public LocalRefreshRvAdapter(List<LocalRvData> dataSet) {
 
@@ -122,4 +149,7 @@ public class LocalRefreshRvAdapter extends RecyclerView.Adapter<LocalRefreshRvAd
         void onItemLongClick(View view, LocalRefreshHolder localRefreshHolder, int position);
     }
 
+    public void setDataSet(List<LocalRvData> dataSet) {
+        this.dataSet = dataSet;
+    }
 }
