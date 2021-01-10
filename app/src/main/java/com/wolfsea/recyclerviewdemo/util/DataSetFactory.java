@@ -74,9 +74,32 @@ public class DataSetFactory {
         return lettersList;
     }
 
+    public static List<List<String>> createLettersList(int length) {
+
+        List<List<String>> lettersList = new ArrayList<>();
+
+        for (int i = 0; i < length; i++) {
+
+            int itemCount = RANDOM.nextInt(25) + 5;
+            List<String> letters = createLetters(itemCount);
+            lettersList.add(letters);
+        }
+
+        return lettersList;
+    }
+
     public static List<String> createTitles() {
 
         return Arrays.asList(TITLES);
+    }
+
+    public static List<String> createTitles(int itemCount) {
+
+        String[] subStr = new String[itemCount];
+        if (itemCount >= 0) {
+            System.arraycopy(TITLES, 0, subStr, 0, itemCount);
+        }
+        return Arrays.asList(subStr);
     }
 
     public static Map<String, String> createDataSet() {

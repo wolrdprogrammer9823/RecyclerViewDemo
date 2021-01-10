@@ -17,11 +17,13 @@ import java.util.List;
  **/
 public class SubRvAdapter extends RecyclerView.Adapter<SubRvAdapter.SubViewHolder> {
 
-    private final List<String> subList;
+    private List<String> subList;
 
     public SubRvAdapter(List<String> subList) {
         this.subList = subList;
     }
+
+    public SubRvAdapter() { }
 
     @NonNull
     @Override
@@ -55,5 +57,8 @@ public class SubRvAdapter extends RecyclerView.Adapter<SubRvAdapter.SubViewHolde
         }
     }
 
+    public void setSubList(List<String> subList) {
+        this.subList = subList;
+    }
 }
 

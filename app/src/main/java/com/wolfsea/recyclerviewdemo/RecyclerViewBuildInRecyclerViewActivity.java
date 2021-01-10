@@ -29,6 +29,7 @@ public class RecyclerViewBuildInRecyclerViewActivity extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rootRv.setLayoutManager(linearLayoutManager);
 
+        final int itemCount = 3;
         List<String> titles = DataSetFactory.createTitles();
         List<List<String>> lettersList = DataSetFactory.createLettersList();
 
